@@ -3,7 +3,7 @@ const { Category, Product, ProductTag } = require('../../models');
 
 
 // Find all categories
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
   try {
     const catData = await Category.findAll({
       include: [{model: Product}]
